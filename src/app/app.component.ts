@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HeroService } from './hero.service'
-import { Hero } from './hero';
+import { Hero } from './hero/hero';
 
 @Component({
   selector: 'app-root',
@@ -8,21 +8,8 @@ import { Hero } from './hero';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'NodeExpress';
 
-  heroes = new Array<Hero>();
-
-  constructor(heroSevice: HeroService){
-
-      heroSevice.getHeroes().subscribe(response => {
-          this.heroes = response.map(item => {
-            return new Hero(
-                item.id,
-                item.name,
-                item.saying
-            );
-          });
-      });
+  constructor(){
   }
 
 }

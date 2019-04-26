@@ -1,0 +1,26 @@
+<div style="text-align:center">
+  <h1>
+   Heroes on {{ title }}!
+  </h1>
+  <img alt="Angular Logo" src="../assets/marvel.png">
+</div>
+<h2>Heroes </h2>
+
+<button (click)="onClickHeroes()">Hero Message</button>
+<h1>{{ heroMessage }}</h1>
+
+<table border="1" style="width: 63%">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Status</th>
+  </tr>
+</thead>
+  <tr *ngFor="let hero of heroes">
+    <td>{{ hero.id }}</td>
+    <td>{{ hero.name }}</td>
+    <td>{{ hero.saying }}</td>
+  </tr>
+</table>
+
